@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+<script type="text/javascript">
+function drawAdidas(){
+  var c=document.getElementById('myCanvas');
+		var cxt=c.getContext('2d');
+		cxt.save();
+		cxt.beginPath();
+  cxt.arc(100,50,30,0,Math.PI*2,true);
+  cxt.fill();
+  cxt.beginPath();
+  cxt.strokeStyle='#c00';
+  cxt.lineWidth=3;
+  cxt.arc(100,50,20,0,Math.PI,false);
+  cxt.stroke();
+  cxt.beginPath();
+  cxt.fillStyle="#c00";
+  cxt.arc(90,45,3,0,Math.PI*2,true);
+  cxt.fill();
+  cxt.moveTo(113,45);
+  cxt.arc(110,45,3,0,Math.PI*2,true);
+  cxt.fill();
+  cxt.stroke();
+  
+  cxt.moveTo(100,80);
+  cxt.lineTo(100,150);
+  cxt.moveTo(100,100);
+  cxt.lineTo(60,120);
+  cxt.moveTo(100,100);
+  cxt.lineTo(140,120);
+  cxt.moveTo(100,150);
+  cxt.lineTo(80,190);
+  cxt.moveTo(100,150);
+  cxt.lineTo(140,190);
+  cxt.stroke();
+}
+ window.addEventListener("load",drawAdidas,true);
+</script>
+</head>
+<body>
+<canvas id="myCanvas" width="230" height="200" style="border:1px solid blue">
+    Your browser does not support the canvas element.
+</canvas>
+</body>
+</html>
