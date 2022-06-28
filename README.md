@@ -1,6 +1,6 @@
 # 运行结果
 
-！[图片]（运行结果ng.png)
+![image](运行结果.png)
 
 # GameBackstage
 
