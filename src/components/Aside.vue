@@ -1,5 +1,10 @@
 <template>
   <div>
+    
+      <div class="logo_back">
+        <img src="../../public/gameicon.png" alt="" srcset="">
+      </div>
+   
       <el-menu
         background-color="#0078d4"
         default-active="2"
@@ -36,7 +41,7 @@
 export default {
     methods: {
          handleOpen(key, keyPath) {
-        console.log(key, keyPath);
+         console.log(key, keyPath);
       },
       handleClose(key, keyPath) {
         console.log(key, keyPath);
@@ -50,7 +55,11 @@ export default {
 .a:hover{
    color: rgb(74, 155, 192);
     
-}.el-menu-vertical-demo{
-   
+}.logo_back{
+  position: absolute;
+  z-index: 10;
+}.logo_back img{
+  width: 100px;
+  transform: translate(50%,20%);
 }
 </style>

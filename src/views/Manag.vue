@@ -204,5 +204,7 @@ tableHeaderColor({ row, column, rowIndex, columnIndex }) {
     text-align: center;
   }.table{
     -ms-overflow-style: none;
-  } 
+  }.is-leaf{
+    font-size: 10px;
+  }
 </style>

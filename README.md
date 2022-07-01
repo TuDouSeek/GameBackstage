@@ -1,8 +1,4 @@
-# 运行结果
-
-![image](运行结果.png)
-
-# GameBackstage
+# tmcm
 
 ## Project setup
 ```
