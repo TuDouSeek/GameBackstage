@@ -1,4 +1,6 @@
-# tmcm
+# Game
+
+!['./运行结果.png']
 
 ## Project setup
 ```
