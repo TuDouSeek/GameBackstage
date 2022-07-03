@@ -26,7 +26,12 @@
             <span slot="title">用户管理</span>
         </el-menu-item>
         </router-link>
-      
+       <router-link to="/home" style="text-decoration: none;">
+        <el-menu-item class="a" style="background-color: rgb(253 253 253 / 16%);">
+            <i class="el-icon-setting"></i>
+            <span slot="title">用户管理</span>
+        </el-menu-item>
+        </router-link>
         <router-link to="/home/Manag" style="text-decoration: none;">
         <el-menu-item class="a" style="background-color: rgb(253 253 253 / 16%);">
             <i class="el-icon-s-tools"></i>
