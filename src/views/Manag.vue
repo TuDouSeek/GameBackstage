@@ -2,16 +2,18 @@
   <div>
     <div class="tree" style="float:left">
         <p class="name">分类</p>
-        <li class="classify_name" @click="sj">1</li>
-        <li class="classify_name" @click="sj2">2</li>
-        <li class="classify_name">3</li>
-        <li class="classify_name">4</li>
-        <li class="classify_name">5</li>
-        <li class="classify_name">6</li>
+        <li class="classify_name" @click="sj">动作</li>
+        <li class="classify_name" @click="sj2">射击</li>
+        <li class="classify_name">竞速</li>
+        <li class="classify_name">模拟</li>
+        <li class="classify_name">2D</li>
+        <li class="classify_name">休闲</li>
    </div>
     <div class="content" style="float:left">
         <div style="display:flex;margin-bottom: 10px;">
-            <el-button type="primary">新增</el-button>
+          
+           <el-button type="primary" @click="dialogFormVisible = true" icon="el-icon-circle-plus">新增</el-button>
+          
             <el-input
                 style="width:200px; margin:0px 10px 0px 50px;"
                 placeholder="游戏名"
@@ -99,7 +101,34 @@
         </div>
         
         </div>
-   
+  
+  <el-dialog title="收货地址" :visible.sync="dialogFormVisible">
+    <el-form :model="form">
+      <el-form-item label="活动名称" :label-width="formLabelWidth">
+        <el-input v-model="form.name" autocomplete="off"></el-input>
+      </el-form-item>
+      <el-form-item label="游戏图片" :label-width="formLabelWidth">
+        <div class="upload_img">
+          <el-upload
+          :limit= '10'
+          action="https://jsonplaceholder.typicode.com/posts/"
+          list-type="picture-card"
+          :on-preview="handlePictureCardPreview"
+	        :on-remove="handleRemove"
+          >
+          <i class="el-icon-plus" >最多10张</i>
+        </el-upload>
+        </div>
+        <el-dialog :visible.sync="dialogVisible">
+          <img width="100%" class="imgs" :src="dialogImageUrl" alt="">
+        </el-dialog>
+      </el-form-item>
+    </el-form>
+    <div slot="footer" class="dialog-footer">
+      <el-button @click="dialogFormVisible = false">取 消</el-button>
+      <el-button type="primary" @click="dialogFormVisible = false">确 定</el-button>
+    </div>
+  </el-dialog>
   </div>
 </template>
 
@@ -111,7 +140,23 @@ import axios from 'axios';
         game:[],
         game2:[],
         tableData:[],
-        input1:''
+        input1:'',
+        dialogTableVisible: false,
+        dialogFormVisible: false,
+        form: {
+          name: '',
+          region: '',
+          date1: '',
+          date2: '',
+          delivery: false,
+          type: [],
+          resource: '',
+          desc: ''
+        },
+        formLabelWidth: '120px',
+       dialogImageUrl: '',
+       dialogVisible: false,
+       
       };
     },
     methods: {
@@ -139,16 +184,27 @@ import axios from 'axios';
       return 'background-color: #F7F6Fd;'   
       },
       // 修改table header的背景色
-tableHeaderColor({ row, column, rowIndex, columnIndex }) {
+      tableHeaderColor({ row, column, rowIndex, columnIndex }) {
       if (rowIndex === 0) {
         return 'background-color: lightblue;color: #303133;font-weight: 500;font-size: 20px;' //font-size: 20px;为字体大小设置
       }
       },
-
-    }
+     
+     
+      handlePictureCardPreview(file) {
+        this.dialogImageUrl = file.url;
+        this.dialogVisible = true;
+      },
+      imgs(){
+        
+      }
+    },
+    mounted(){
+      
+    } 
   };
 </script>
-<style>
+<style >
 *::-webkit-scrollbar {
 				display: none;
 			}
