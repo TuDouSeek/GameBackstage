@@ -17,7 +17,7 @@
             <el-input
                 style="width:200px; margin:0px 10px 0px 50px;"
                 placeholder="游戏名"
-                suffix-icon="el-icon-date"
+                suffix-icon="el-icon-search"
                 v-model="input1">
               </el-input>
             <el-button type="info">搜索</el-button>
